@@ -11,9 +11,5 @@ Track the execution in the local log file:
 
   
   
-Place your script content in the function execute_script
-
-Return any value back to ePO
-NOW=$(date --iso-8601=seconds)
-CUSTOM_PROP_VALUE='Result abc from script using EEDK - '${NOW}
+Place your script content in the function execute_script and make this return any value back to ePO in the CUSTOM_PROP_VALUE='Result from script using EEDK - '
 
