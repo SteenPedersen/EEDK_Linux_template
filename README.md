@@ -11,8 +11,8 @@ Track the execution in the local:
 
   
   
-Place your script content in the 
-  function execute_script
+Place your script content in the function execute_script
+    
     # Place your script and code to be executed here
     # Any return value to ePO (max 255 character) should placed in variable CUSTOM_PROP_VALUE=
 
