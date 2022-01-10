@@ -12,13 +12,11 @@ Track the execution in the local:
   
   
 Place your script content in the 
-  function execute_script(){
-    #
+  function execute_script
     # Place your script and code to be executed here
     # Any return value to ePO (max 255 character) should placed in variable CUSTOM_PROP_VALUE=
-    
-    
+
     # Return any value back to ePO
     NOW=$(date --iso-8601=seconds)
     CUSTOM_PROP_VALUE='Result abc from script using EEDK - '${NOW}
-  }
+
