@@ -70,7 +70,7 @@ function execute_script(){
     
     # Return any value back to ePO
     NOW=$(date --iso-8601=seconds)
-    CUSTOM_PROP_VALUE='Result abc from script using EEDK - '${NOW}
+    CUSTOM_PROP_VALUE='Result from script using EEDK - '${NOW}
 
 
 }
