@@ -20,7 +20,7 @@ fi
 LOG_FILE='/var/log/EEDK_Debug.log'
 
 # Write a time stamp to the log file
-NOW=$(date --iso-8601=seconds)
+NOW=$(date '+%Y-%m-%d %H:%M:%S')
 echo "${NOW} Script name: $0 ${@}">>${LOG_FILE} 2>&1
 CUSTOM_PROP_VALUE=''
 
@@ -51,7 +51,7 @@ function show_script_info() {
 }
 
 function return_results_to_epo(){
-    NOW=$(date --iso-8601=seconds)
+    NOW=$(date '+%Y-%m-%d %H:%M:%S')
     echo "${NOW} Result value: ${CUSTOM_PROP_VALUE}">>${LOG_FILE} 2>&1
     ${MCAFEE_DIR}/maconfig -custom "-prop${CUSTOM_PROP}" "${CUSTOM_PROP_VALUE}" >>${LOG_FILE} 2>&1
     ${MCAFEE_DIR}/cmdagent -p >>${LOG_FILE} 2>&1
@@ -69,7 +69,7 @@ function execute_script(){
     
     
     # Return any value back to ePO
-    NOW=$(date --iso-8601=seconds)
+    NOW=$(date '+%Y-%m-%d %H:%M:%S')
     CUSTOM_PROP_VALUE='Result from script using EEDK - '${NOW}
 
 
