@@ -1,5 +1,6 @@
 # EEDK_Linux_template
-Simple bash script template for EEDK deployment of a script and return value in Agent Custom Props
+Simple bash script template for EEDK deployment of a script and return value in Agent Custom Props. 
+EEDK = (ePO Endpoint Deployment Kit) 
 
 When EEDK package the is created - make sure to set the "Command to Run" as
 bash ./<scriptname>.sh
@@ -14,3 +15,5 @@ The EEDK package has to be created for either MacOS or Linux. The EEDK package c
 Place your script content in the function execute_script and make this return any value back to ePO in the CUSTOM_PROP_VALUE='Result from script using EEDK - '
 
 When testing the script before creating the EEDK package make sure to use command: sudo bash ./EEDK_linux_template.sh as there are commands which requires root privileges while running.
+
+EEDK Getting Started Guide: https://community.mcafee.com/t5/ePolicy-Orchestrator-ePO/ePO-Endpoint-Deployment-Kit-EEDK-Getting-started-guide/td-p/524421
