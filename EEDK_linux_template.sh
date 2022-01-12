@@ -24,6 +24,8 @@ CUSTOM_PROP='5'  # which custom prop to use for the results
 # default McAfee Agent locations
 OS_TYPE=( 'Linux OS' 'Mac OS')
 OS_AGENT_LOCATION=( '/opt/McAfee/agent/bin' '/Library/McAfee/Agent/bin')
+AGENT_LOG_LOCATION=('/var/McAfee/agent/logs/') 
+# Same Agent Log location for Linux and MacOS
 
 # get number of elements in the array
 LOCATION_COUNT=${#OS_AGENT_LOCATION[@]}
@@ -71,6 +73,11 @@ function return_results_to_epo(){
     echo "${NOW} Result value: ${CUSTOM_PROP_VALUE}">>${LOG_FILE} 2>&1
     ${MCAFEE_DIR}/maconfig -custom "-prop${CUSTOM_PROP}" "${CUSTOM_PROP_VALUE}" >>${LOG_FILE} 2>&1
     ${MCAFEE_DIR}/cmdagent -p >>${LOG_FILE} 2>&1
+    
+    # Example of copy files to Agent Log folder 
+    # The content of the Agent Log folder can be pulled from ePO Console using Single System Troubleshooting 
+    cp ${LOG_FILE} ${AGENT_LOG_LOCATION}
+    
     echo
     information "Local log file: ${LOG_FILE}"
     ok "Status returned: ${CUSTOM_PROP_VALUE}"
@@ -82,7 +89,10 @@ function execute_script(){
     #
     # Place your script and code to be executed here
     # Any return value to ePO (max 255 character) should placed in variable CUSTOM_PROP_VALUE=
-    
+  
+    # Example of copy files to Agent Log folder 
+    # The content of the Agent Log folder can be pulled from ePO Console using Single System Troubleshooting 
+    # cp <file> ${AGENT_LOG_LOCATION}
     
     # Return any value back to ePO
     NOW=$(date '+%Y-%m-%d %H:%M:%S')
