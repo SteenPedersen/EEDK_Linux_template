@@ -1,7 +1,7 @@
 #!/bin/bash
 # Simple concept check for writting local log on Linux or MacoOS and execute the Agent Commands
-# When EEDK package is created - make sure to set the "Command to Run" as
-# bash ./<scriptname>.sh
+# When EEDK package is created - make sure to set the "Command to Run" as the script only
+# <scriptname>.sh
 
 RED="\033[0;31m"; GREEN="\033[32m"; YELLOW="\033[1;33m"; ENDCOLOR="\033[0m"
 # if you don't want colored output, set the variables to empty strings:
